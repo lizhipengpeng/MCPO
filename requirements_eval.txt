@@ -1,0 +1,7 @@
+# local eval
+pandas
+sentence-transformers
+rouge_score
+evaluate
+sacrebleu==2.4.1
+sacrebleu[ja]

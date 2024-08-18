@@ -1,0 +1,8 @@
+torch
+vllm>=0.4.2
+loguru
+transformers
+sentence_transformers
+yake
+numpy
+accelerate
