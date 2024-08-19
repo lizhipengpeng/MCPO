@@ -30,7 +30,9 @@ python and other requirements in requirements.txt
 
 ## Running the Code
 
+```shell
 python local_evaluation.py --model_path /model/path --/data/path  --instruction {self_cot_mcp|self_cot_all|little_model_cot_mcp|little_model_cot_all|generation_prompt|similarity|all}
+```
 
 ## Contact
 
