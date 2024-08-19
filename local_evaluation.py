@@ -203,12 +203,12 @@ def get_evaluation_methods():
         "sent-transformer": lambda generated_text, reference_texts: metrics.calculate_cosine_similarity(
             generated_text=generated_text,
             reference_texts=reference_texts,
-            model_name="/cbd-lizhipeng/all-MiniLM-L6-v2",
+            model_name="/all-MiniLM-L6-v2",
         ),
         "multilingual-sent-transformer": lambda generated_text, reference_texts: metrics.calculate_cosine_similarity(
             generated_text=generated_text,
             reference_texts=reference_texts,
-            model_name="/cbd-lizhipeng/paraphrase-multilingual-MiniLM-L12-v2",
+            model_name="/paraphrase-multilingual-MiniLM-L12-v2",
         ),
         "micro f1": metrics.calculate_true_positive_false_positives_false_negatives,
         "ndcg": metrics.calculate_ndcg,
@@ -245,8 +245,6 @@ def main(model_path, data_path, instruction="None"):
     # Load development data
     # Please download the development data from : https://www.aicrowd.com/challenges/amazon-kdd-cup-2024-multi-task-online-shopping-challenge-for-llms/dataset_files
     # and place it at: ./data/development.json
-    # DATA_FILENAME = "/cbd-lizhipeng/amazon-kdd-cup-2024-starter-kit/data/development.json"
-    # DATA_FILENAME = "/cbd-lizhipeng/amazon-kdd-cup-2024-starter-kit/data/EC-Guide_small.json"
     
 
     if not os.path.exists(data_path):
@@ -290,7 +288,6 @@ def main(model_path, data_path, instruction="None"):
     print("Task specific metrics: ")
     print(overall_metrics)
     
-    log_path = "/cbd-lizhipeng/aaai_result/{}-{}-{}.txt".format(model_path.split('/')[-1], data_path.split("/")[-1].split('.')[0], instruction)
     overall_metrics.to_csv(log_path, index=False)
     print()
     # Calculate and print the overall score across all tasks and metrics

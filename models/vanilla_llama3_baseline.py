@@ -40,9 +40,9 @@ class Llama3_8B_ZeroShotModel(ShopBenchBaseModel):
 
     def initialize_models(self):
         # Initialize Meta Llama 3 - 8B Instruct Model
-        self.model_name = "/cbd-lizhipeng/LLaMA-Factory/models_sft/llama3-70B-instruct-epoch3-trainandval-6000-awq"
-        self.RAG_model = SentenceTransformer("/cbd-lizhipeng/amazon-kdd-cup-2024-starter-kit/models/snowflake-arctic-embed-m")
-        self.phi_model_path = "/cbd-lizhipeng/Phi-3-mini-4k-instruct-onnx/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4"
+        self.model_name = "/LLaMA-Factory/models_sft/llama3-70B-instruct-epoch3-trainandval-6000-awq"
+        self.RAG_model = SentenceTransformer("/amazon-kdd-cup-2024-starter-kit/models/snowflake-arctic-embed-m")
+        self.phi_model_path = "/Phi-3-mini-4k-instruct-onnx/cpu_and_mobile/cpu-int4-rtn-block-32-acc-level-4"
         # self.phi_model = AutoAWQForCausalLM.from_quantized(self.phi_model_path, fuse_layers=False, use_qbits=True)
         # self.phi_tokenizer = AutoTokenizer.from_pretrained(self.phi_model_path, trust_remote_code=True)
         # self.phi_streamer = TextStreamer(self.phi_tokenizer, skip_prompt=True, skip_special_tokens=True)
@@ -71,8 +71,7 @@ class Llama3_8B_ZeroShotModel(ShopBenchBaseModel):
         )
 
         # self.tokenizer = self.llm.get_tokenizer()
-        self.query_item = pd.read_csv("/cbd-lizhipeng/amazon-kdd-cup-2024-starter-kit/models/query_items.csv")
-        # self.phi_model = vllm.LLM(model="/cbd-lizhipeng/Phi-3-mini-4k-instruct-awq", quantization="AWQ", tensor_parallel_size=VLLM_TENSOR_PARALLEL_SIZE,gpu_memory_utilization=0.1)
+        self.query_item = pd.read_csv("/amazon-kdd-cup-2024-starter-kit/models/query_items.csv")
 
     def get_batch_size(self) -> int:
         """

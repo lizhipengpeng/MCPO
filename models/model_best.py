@@ -38,8 +38,6 @@ class Vicuna2ZeroShot(ShopBenchBaseModel):
         self.system_prompt = "You are a helpful online shopping assistant. Below is a example and a question. Please reference [Example] to  answer the following [Question] about online shopping and follow the given instructions. And you should answer in the [Answer] field.\n\n"
         self.query_item = pd.read_csv("./models/query_items.csv")
         self.RAG_model = SentenceTransformer("./models/snowflake-arctic-embed-m").cuda()
-        # self.sentiment_tokenizer = AutoTokenizer.from_pretrained("/cbd-lizhipeng/Phi-3-mini-4k-instruct", trust_remote_code=True)
-        # self.sentiment_model = AutoModelForCausalLM.from_pretrained("/cbd-lizhipeng/Phi-3-mini-4k-instruct", device_map='auto', torch_dtype=torch.float16, trust_remote_code=True, do_sample=True)
 
         self.instrution = instrution
         if "Qwen2".lower() in model_path.lower():
