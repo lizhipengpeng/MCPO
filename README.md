@@ -28,6 +28,11 @@ Code for paper "User Behavior Alignment via Large Language Model with Model Coop
 
 python and other requirements in requirements.txt
 
+## Dataset
+
+[ECInstruct](https://huggingface.co/datasets/NingLab/ECInstruct)
+[EC-Guide](https://huggingface.co/datasets/AiMijie/EC-Guide)
+
 ## Running the Code
 
 ```shell
