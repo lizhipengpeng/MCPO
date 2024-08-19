@@ -21,6 +21,7 @@ Code for paper "User Behavior Alignment via Large Language Model with Model Coop
 ├── README.md
 ├── requirements_eval.txt  //requirements for metrics
 ├── requirements.txt // requirements for LLM
+├── gradient-slerp.yml // config file for SLERP
 └── utilities
     └── _Dockerfile
 ```
