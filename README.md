@@ -5,6 +5,7 @@ Code for paper "User Behavior Alignment via Large Language Model with Model Coop
 
 ## Code Structure
 
+```txt
 ├── data_generate.ipynb // convert data format
 ├── LICENSE
 ├── local_evaluation.py  // main function
@@ -20,10 +21,9 @@ Code for paper "User Behavior Alignment via Large Language Model with Model Coop
 ├── README.md
 ├── requirements_eval.txt  //requirements for metrics
 ├── requirements.txt // requirements for LLM
-├── run_result.sh // run script
 └── utilities
     └── _Dockerfile
-
+```
 ## Dependencies
 
 python and other requirements in requirements.txt
